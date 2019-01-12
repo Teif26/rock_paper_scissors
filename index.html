@@ -7,33 +7,76 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-    
+ <script>
+  var userScore = 0;
+  var computerScore = 0;
+ function win(userPick,computerPick){
+    userScore++;
+    console.log(`you win ${userPick} beats ${word(computerPick)}${userScore}`)
+    if(userScore === 3 && userScore > computerScore){
+        alert(`you win best out of five`)
+    }
+}
+function lose(userPick,computerPick){
+    computerScore++;
+    alert(`you lose ${word(computerPick)} beats ${userPick}${computerScore}`)
+    if(computerScore === 3 && computerScore > userScore){
+        alert(`you lose best of 5`)
+    }
+    }
+function draw(userPick,computerPick){
+    alert(`Its a draw`)
+}
 
 
+
+
+
+function word(computerChoice){
+    if(computerChoice === "r"){
+        return "rock"
+    }if(computerChoice === "s"){
+        return "scissors"
+    }if(computerChoice === "p"){
+        return "paper"
+    }
+}
 
 function getComputerPick(){
 const choices = ["r","p","s"];
-const randomNumber = math.floor(math.random()*3);
+const randomNumber = Math.floor(Math.random()*3);
 return choices[randomNumber]
-
-
-
 
 }
 
 
-function game(){
+function game(userPick){
    const computerPick = getComputerPick();
-   const userPick = prompt("enter your choice");
-
+     switch (userPick + computerPick){
+      case "rocks":
+      case "paperr":
+      case "scissorsp":
+      win(userPick,computerPick);
+      break;
+      case "rockp":
+      case "papers":
+      case "scissorsr":
+      lose(userPick,computerPick);
+      break;
+      case "rockr":
+      case "paperp":
+      case "scissorss": + 
+      draw(userPick,computerPick);
+      break;
+     }
 }
 
      
     
     
  function main(){
- prompt("Please enter your choice")
+  let userPick = prompt("Enter rock, paper, or scissors").toLowerCase()
+  return game(userPick)
  }
     main()
     
