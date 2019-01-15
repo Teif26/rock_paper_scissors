@@ -7,25 +7,61 @@
     <title>Document</title>
 </head>
 <body>
- <script>
-  var userScore = 0;
-  var computerScore = 0;
+    <header>
+        <h1>Rock Paper Scissors</h1>
+    </header>
+   
+   
+    <div class="score-board">
+     <div id="user-label" class="badge">User</div>     
+
+    <div id="computer-label" class="badge">Comp</div>           
+    <span id="user-score">0</span>:<span id="computer-score">0</span>
+    </div>
+
+    <div class="results">
+        <p>Paper covers rock. You win!</p>
+    </div>
+
+<div class="choices">
+    <div class="choice" id="r">
+      <img src="rock.jpg" alt="rock pic">
+    </div>
+    <div class="choice" id="p">
+     <img src="paper.jpg" alt="paper pic">
+    </div>
+    <div class="choice" id="s">
+     <img src="scissors.jpg" alt="scissors pic">
+    </div>
+ </div>
+
+<p id="action-message">Make your move</p>
+
+<script>
+ 
+var userScore = 0;
+var computerScore = 0;
+ 
+ 
  function win(userPick,computerPick){
     userScore++;
-    console.log(`you win ${userPick} beats ${word(computerPick)}${userScore}`)
-    if(userScore === 3 && userScore > computerScore){
-        alert(`you win best out of five`)
+    console.log(`you win this round${userPick} beats ${word(computerPick)} You ${userScore} PC ${computerScore}`)
+    if(userScore === 5){
+        console.log(`you win the game ${userScore} to ${computerScore}`)
     }
-}
+ }
+
 function lose(userPick,computerPick){
     computerScore++;
-    alert(`you lose ${word(computerPick)} beats ${userPick}${computerScore}`)
-    if(computerScore === 3 && computerScore > userScore){
-        alert(`you lose best of 5`)
-    }
-    }
+    console.log(`you lose this round ${word(computerPick)} beats ${userPick}${computerScore}`)
+    if(computerScore === 5){
+        console.log(`you lose the game ${computerScore} to ${userScore}`)
+    };
+}
+
+
 function draw(userPick,computerPick){
-    alert(`Its a draw`)
+    console.log(`Its a draw`)
 }
 
 
@@ -40,14 +76,14 @@ function word(computerChoice){
     }if(computerChoice === "p"){
         return "paper"
     }
-}
+};
+
 
 function getComputerPick(){
 const choices = ["r","p","s"];
 const randomNumber = Math.floor(Math.random()*3);
 return choices[randomNumber]
-
-}
+};
 
 
 function game(userPick){
@@ -74,23 +110,17 @@ function game(userPick){
      
     
     
- function main(){
+ function mainFunc(){
   let userPick = prompt("Enter rock, paper, or scissors").toLowerCase()
   
   return game(userPick)
  }
-    main();
-    main();
-    main();
-    main();
-    main();
-    main();
-    main();
-    main();
-    main();
-    main();
-    main();
+  
 
+   while(userScore <= 5 || computerScore <= 5){
+    return mainFunc()
+   }
+  
     </script>
 </body>
 </html>
