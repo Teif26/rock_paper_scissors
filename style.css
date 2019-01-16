@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Asap:400,500,700');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #24272E;
+}
+header{
+    background: white;
+    padding: 20px;
+
+}
+
+header > h1{
+    color:#24272E;
+    text-align: center;
+    font-family: Asap, sans-serif;
+}
+
+.score-board {
+position: relative;
+margin: 20px auto;
+border: 3px solid white;
+border-radius: 4px;
+text-align: center;
+width: 200px;
+color: white;
+font-size: 46px;
+padding: 15px 20px;
+font-family: Asap, sans-serif;
+}
+.badge{
+    background: #DF5E59;
+    font-size: 14px;
+    padding: 2px 10px;
+    font-family: Asap, sans-serif;
+}
+#user-label{
+    position: absolute;
+    top: 45%;
+    left: -15%;
+}
+#computer-label{
+    position: absolute;
+    top: 45%;
+    right: -15%;
+}
+.results{
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    font-family: Asap, sans-serif;
+}
+.results > p {
+    
+    text-align: center;
+    font-weight: bold;
+    font-family: Asap, sans-serif;
+
+}
+.choices{
+    display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+justify-items: center;
+align-content: space-around;
+
+}
+
+.choice > img{
+    background-image: url("rock.jpg");
+   width:100px;
+   height: 100px;
+   border: palevioletred ;
+   border-radius: 50px;
+  
+}
+.choice{
+    
+    margin-top: 50px;
+    height: 100px;
+    width:100px;
+   
+    border-radius: 50px;
+}
+.choice > img:hover{
+    border: 8px groove rgba(212, 108, 66, 0.493);
+}
+#action-message{
+    margin-top: 100px;
+    text-align: center;
+    font-family: Asap, sans-serif;
+    font-size: 20px;
+    color: white;
+    font-weight: bolder;
+}
